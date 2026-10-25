@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Rosh Roddur</string>
+    <string name="title_activity_main">Rosh Roddur</string>
+    <string name="package_name">com.roshroddur.app</string>
+    <string name="custom_url_scheme">com.roshroddur.app</string>
+</resources>

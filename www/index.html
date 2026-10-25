@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>রস ও রোদ্দুর | বার্ষিক ফলন প্রতিবেদন</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Hind Siliguri', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: #FBF9F5;
+            color: #2B1007;
+            line-height: 1.6;
+            padding-bottom: 40px;
+        }
+
+        .serif {
+            font-family: 'Playfair Display', 'Hind Siliguri', serif;
+        }
+
+        /* Container */
+        .container {
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(251, 249, 245, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #EADCCF;
+            z-index: 100;
+            padding: 12px 16px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-logo {
+            font-size: 20px;
+            font-weight: 700;
+            color: #2B1007;
+        }
+
+        .badge-year {
+            font-size: 11px;
+            background: #FEF3C7;
+            color: #B45309;
+            padding: 3px 8px;
+            border-radius: 20px;
+            font-weight: 600;
+            border: 1px solid #FCD34D;
+            margin-right: 6px;
+        }
+
+        .btn-sm {
+            background: #4A1E0F;
+            color: #FFF;
+            padding: 7px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 24px 0 16px;
+            text-align: center;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: #FEF3C7;
+            color: #92400E;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 20px;
+            border: 1px solid #FDE68A;
+            margin-bottom: 12px;
+        }
+
+        .hero-title {
+            font-size: 30px;
+            line-height: 1.25;
+            font-weight: 700;
+            color: #2B1007;
+            margin-bottom: 12px;
+        }
+
+        .hero-title span {
+            color: #9B4222;
+            font-style: italic;
+        }
+
+        .hero-desc {
+            font-size: 13px;
+            color: #634335;
+            margin-bottom: 18px;
+        }
+
+        .hero-img-box {
+            border-radius: 20px;
+            overflow: hidden;
+            border: 2px solid #FFF;
+            box-shadow: 0 10px 25px rgba(74, 30, 15, 0.12);
+            position: relative;
+            height: 200px;
+        }
+
+        .hero-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-img-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(43, 16, 7, 0.85));
+            padding: 12px;
+            color: #FFF;
+            text-align: left;
+        }
+
+        /* Metrics */
+        .section-title {
+            text-align: center;
+            margin: 28px 0 16px;
+        }
+
+        .section-subtitle {
+            font-size: 11px;
+            color: #B45309;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-heading {
+            font-size: 22px;
+            font-weight: 700;
+            color: #2B1007;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 24px;
+        }
+
+        .metric-card {
+            background: #FFF;
+            padding: 16px 12px;
+            border-radius: 16px;
+            border: 1px solid #EADCCF;
+            text-align: center;
+        }
+
+        .metric-icon {
+            font-size: 24px;
+            margin-bottom: 4px;
+        }
+
+        .metric-num {
+            font-size: 22px;
+            font-weight: 800;
+            color: #2B1007;
+        }
+
+        .metric-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: #634335;
+        }
+
+        /* Filter Tabs */
+        .tab-box {
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+            background: #EFE8DE;
+            padding: 4px;
+            border-radius: 25px;
+            margin: 16px 0 20px;
+        }
+
+        .tab-btn {
+            background: transparent;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #4A1E0F;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .tab-btn.active {
+            background: #4A1E0F;
+            color: #FFF;
+        }
+
+        /* Product Cards */
+        .product-card {
+            background: #FFF;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid #EADCCF;
+            margin-bottom: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+
+        .product-img {
+            width: 100%;
+            height: 170px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 16px;
+        }
+
+        .product-origin {
+            font-size: 11px;
+            font-weight: 700;
+            color: #B45309;
+            margin-bottom: 2px;
+        }
+
+        .product-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #2B1007;
+            margin-bottom: 4px;
+        }
+
+        .product-desc {
+            font-size: 12px;
+            color: #634335;
+            margin-bottom: 12px;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #F4EFE6;
+            padding-top: 10px;
+        }
+
+        .product-price {
+            font-size: 16px;
+            font-weight: 700;
+            color: #2B1007;
+        }
+
+        .order-btn {
+            background: #F4EFE6;
+            color: #2B1007;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        /* Footer */
+        footer {
+            background: #2B1007;
+            color: #FBF9F5;
+            text-align: center;
+            padding: 24px 16px;
+            margin-top: 24px;
+            border-radius: 24px 24px 0 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div style="display: flex; align-items: center;">
+                <span class="badge-year">২০২৪-২৫</span>
+                <span class="brand-logo serif">রস & রোদ্দুর</span>
+            </div>
+            <a href="#products" class="btn-sm">সম্ভার দেখুন</a>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-tag">🌾 বার্ষিক ঐতিহ্য ও ফলন রিপোর্ট</div>
+            <h1 class="hero-title serif">
+                আমের সোনালী রোদ, <br>
+                <span>গুড়ের খাঁটি সুবাস</span> ও <br>
+                রোদে জারিত আচার।
+            </h1>
+            <p class="hero-desc">
+                বাংলার খাঁটি ঐতিহ্য, গাছিদের নির্ভেজাল ঘাম, চাঁপাইনবাবগঞ্জের আম বাগান আর মা-ঠাকুমাদের হাতে রোদে শুকানো ঘরোয়া আচারের ডিজিটাল বার্ষিক প্রতিবেদন।
+            </p>
+
+            <div class="hero-img-box">
+                <img src="https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&fit=crop&w=800&q=80" alt="Fresh Mangoes">
+                <div class="hero-img-overlay">
+                    <p style="font-size: 10px; color: #FCD34D; font-weight: 700;">মৌসুমী সংগ্রহ</p>
+                    <p style="font-size: 14px; font-weight: 700;">১০০% প্রাকৃতিক ও ফরমালিনমুক্ত</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Metrics Section -->
+        <section id="metrics">
+            <div class="section-title">
+                <p class="section-subtitle">বার্ষিক পরিসংখ্যান</p>
+                <h2 class="section-heading serif">আমাদের এই বছরের অর্জন</h2>
+            </div>
+
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-icon">🥭</div>
+                    <div class="metric-num serif"><span class="counter" data-target="18400">0</span>+ কেজি</div>
+                    <div class="metric-label">গাছপাকা আম</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">🍯</div>
+                    <div class="metric-num serif"><span class="counter" data-target="9200">0</span>+ কেজি</div>
+                    <div class="metric-label">খাঁটি নলেন গুড়</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">🌶️</div>
+                    <div class="metric-num serif"><span class="counter" data-target="4850">0</span>+ জার</div>
+                    <div class="metric-label">রোদে জারিত আচার</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">👩‍🌾</div>
+                    <div class="metric-num serif"><span class="counter" data-target="145">0</span>+ পরিবার</div>
+                    <div class="metric-label">স্বাবলম্বী কারিগর</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Section -->
+        <section id="products">
+            <div class="section-title">
+                <p class="section-subtitle">আমাদের সমাহার</p>
+                <h2 class="section-heading serif">স্বাদের বার্ষিক সংগ্রহ</h2>
+            </div>
+
+            <!-- Tab Filters -->
+            <div class="tab-box">
+                <button class="tab-btn active" onclick="filterProducts('all', this)">সবগুলো</button>
+                <button class="tab-btn" onclick="filterProducts('aam', this)">আম</button>
+                <button class="tab-btn" onclick="filterProducts('gur', this)">গুড়</button>
+                <button class="tab-btn" onclick="filterProducts('aachar', this)">আচার</button>
+            </div>
+
+            <!-- Product Cards -->
+            <div id="productGrid">
+                
+                <!-- Product 1: আম -->
+                <div class="product-card" data-category="aam">
+                    <img class="product-img" src="https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&fit=crop&w=600&q=80" alt="হিমসাগর আম">
+                    <div class="product-info">
+                        <div class="product-origin">চাঁপাইনবাবগঞ্জ</div>
+                        <h3 class="product-title serif">গাছপাকা হিমসাগর আম</h3>
+                        <p class="product-desc">কোনো কার্বাইড ছাড়া প্রাকৃতিকভাবে পাকা মিষ্টি ও আঁশহীন আম। সরাসরি বাগান থেকে সংগৃহীত।</p>
+                        <div class="product-footer">
+                            <span class="product-price">৳ ১২০ <small style="font-size:11px; font-weight:normal;">/কেজি</small></span>
+                            <button class="order-btn">অর্ডার করুন</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2: গুড় -->
+                <div class="product-card" data-category="gur">
+                    <img class="product-img" src="https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?auto=format&fit=crop&w=600&q=80" alt="নলেন গুড়">
+                    <div class="product-info">
+                        <div class="product-origin">যশোরের ঐতিহ্য</div>
+                        <h3 class="product-title serif">খাঁটি দানাদার নলেন গুড়</h3>
+                        <p class="product-desc">চিনি ও রঙমুক্ত ভোরের তাজা খেজুরের রস মাটির চুলায় কাঠের আঁচে জ্বাল দিয়ে তৈরি সোনালী পাটালি।</p>
+                        <div class="product-footer">
+                            <span class="product-price">৳ ৩৮০ <small style="font-size:11px; font-weight:normal;">/কেজি</small></span>
+                            <button class="order-btn">অর্ডার করুন</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3: আচার -->
+                <div class="product-card" data-category="aachar">
+                    <img class="product-img" src="https://images.unsplash.com/photo-1621996346565-e3d5d6281750?auto=format&fit=crop&w=600&q=80" alt="আমের আচার">
+                    <div class="product-info">
+                        <div class="product-origin">ঘরোয়া রেসিপি</div>
+                        <h3 class="product-title serif">রোদে জারিত কাশ্মীরি আচার</h3>
+                        <p class="product-desc">ঘানিভাঙা খাঁটি সরিষার তেল ও রোদে শুকানো ঐতিহ্যবাহী নস্টালজিক মিষ্টি-ঝাল আমের আচার।</p>
+                        <div class="product-footer">
+                            <span class="product-price">৳ ৩৫০ <small style="font-size:11px; font-weight:normal;">/৪০০গ্রাম</small></span>
+                            <button class="order-btn">অর্ডার করুন</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <h3 class="serif" style="font-size: 20px;">রস & রোদ্দুর</h3>
+        <p style="font-size: 12px; opacity: 0.7; margin-top: 4px;">বাংলার খাঁটি ঐতিহ্য বাঁচিয়ে রাখার বার্ষিক প্রতিবেদন</p>
+        <p style="font-size: 10px; opacity: 0.4; margin-top: 14px;">© ২০২৫ সর্বস্বত্ব সংরক্ষিত</p>
+    </footer>
+
+    <!-- Interactive Script -->
+    <script>
+        function filterProducts(cat, el) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            el.classList.add('active');
+
+            const cards = document.querySelectorAll('.product-card');
+            cards.forEach(card => {
+                if(cat === 'all' || card.dataset.category === cat) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Live Animated Counter
+        const counters = document.querySelectorAll('.counter');
+        counters.forEach(counter => {
+            const target = +counter.getAttribute('data-target');
+            let count = 0;
+            const inc = target / 30;
+            const update = () => {
+                count += inc;
+                if(count < target) {
+                    counter.innerText = Math.ceil(count).toLocaleString('bn-BD');
+                    setTimeout(update, 25);
+                } else {
+                    counter.innerText = target.toLocaleString('bn-BD');
+                }
+            };
+            update();
+        });
+    </script>
+</body>
+</html>
